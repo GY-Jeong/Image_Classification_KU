@@ -1,6 +1,6 @@
 import os
 
-#import cv2
+import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import sklearn.model_selection
@@ -179,7 +179,7 @@ def predict_image_sample(X_test, y_test, y_pred_onehot):
     wrong_label = []
     good = []
     good_label = []
-    y_test = y_test.numpy()
+    y_test = np.array(y_test)
     for i, onehot_element in enumerate(y_pred_onehot):
         y_test_element = y_test[i]
         print(y_test_element, onehot_element)
@@ -231,15 +231,15 @@ def predict_image_sample(X_test, y_test, y_pred_onehot):
 
 if __name__ == "__main__":
     numpy_dir = "C:/Users/GY/Desktop/건국대학교/강의자료/3-2/Introduction to Data Science/images_numpy/"
-    image_directory = "C:/Users/GY/Desktop/images/"
+    image_directory = "C:/Users/GY/Desktop/DEV/images/"
     model_directory = "C:/Users/GY/Desktop/건국대학교/강의자료/3-2/Introduction to Data Science/model/"
     image_class_name = ["food", "interior", "exterior"]
-    keras.Sequential(
-        [
-            layers.experimental.preprocessing.RandomFlip("horizontal_and_vertical"),
-            layers.experimental.preprocessing.RandomRotation(0.2),
-        ]
-    )
+    # keras.Sequential(
+    #     [
+    #         layers.experimental.preprocessing.RandomFlip("horizontal_and_vertical"),
+    #         layers.experimental.preprocessing.RandomRotation(0.2),
+    #     ]
+    # )
     config = {
         "mode": "test",
         "batch_size": 20,
@@ -249,17 +249,17 @@ if __name__ == "__main__":
     }
 
     ##최초 1회만 실행
-    #image_to_numpy()
+    # image_to_numpy()
 
-    #X_train, X_test, y_train, y_test = l_image(config)
+    # X_train, X_test, y_train, y_test = l_image(config)
     X_train = np.load(numpy_dir + "X_train.npy")
     X_test = np.load(numpy_dir + "X_test.npy")
-    # y_train = np.load(numpy_dir + 'y_train.npy')
+    y_train = np.load(numpy_dir + 'y_train.npy')
     y_test = np.load(numpy_dir + "y_test.npy")
     # X_train = tf.convert_to_tensor(X_train)
-    X_test = tf.convert_to_tensor(X_test)
+    # X_test = tf.convert_to_tensor(X_test)
     # y_train = tf.convert_to_tensor(y_train)
-    y_test = tf.convert_to_tensor(y_test)
+    # y_test = tf.convert_to_tensor(y_test)
     # print(X_train.shape)
     print(X_test.shape)
     # print(y_train.shape)
