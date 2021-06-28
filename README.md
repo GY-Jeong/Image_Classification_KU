@@ -12,9 +12,12 @@
 
 
 ## 최종 모델 아키텍처
-
 ![image](https://user-images.githubusercontent.com/28976984/123670920-b0463b80-d878-11eb-9ba9-314b1353a1b3.png)
 
-## 프로젝트 발표 동영상
 
-https://youtu.be/98aAyaWZcgQ
+## 프로젝트 발표 자료
+[PDF](https://github.com/GY-Jeong/Image_Classification_KU/blob/master/PPT.pdf)
+
+
+## 프로젝트 발표 동영상
+[Youtube](https://youtu.be/98aAyaWZcgQ)
